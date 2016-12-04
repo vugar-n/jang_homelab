@@ -1,0 +1,4 @@
+Port 2222
+PubkeyAuthentication yes
+PermitRootLogin no
+PasswordAuthentication no
