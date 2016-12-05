@@ -53,42 +53,61 @@ To understand how this configurator comes together in pieces, inspect each files
 
 - [*hostname-ks.cfg*](./hostname-ks.cfg)
   - Kickstart file for physical machine to set up KVM hypervisor/libvirt to host VMs
+  
 - *[main-script-fb.sh](./main-script-fb.sh)*
   - Main script executes each script below in sequential order
+  
 - *[sysctl-fb.sh](./sysctl-fb.sh)*
   - Configure kernel runtime parameter
+  
 - *[tcpwrapper-fb.sh](tcpwrapper-fb.sh)*
   - To allow or deny services from host
+  
 - *[firewall-fb.sh](./firewall-fb.sh)*
   - Configure firewalld rules using firewall-cmd
+  
 - *[sshd_config_modifier-fb.sh](./sshd_config_modifier-fb.sh)*
   - Modify the `/etc/ssh/sshd_config` file for SSH server
+  
 - *[add_sshd-fb.txt](./add_sshd-fb.txt)*
   - Wishlist file for above script to add/modify sshd_config keywords
+  
 - *[ssh-selinux-port-fb.sh](./ssh-selinux-port-fb.sh)*
   - Change the default **SELinux** port context for SSH port 
+  
 - *[fail2ban-fb.sh](./fail2ban-fb.sh)*
   - Set up **fail2ban** for SSH
+  
 - *[restart-firewall-sshd-fb.sh](./restart-firewall-sshd-fb.sh)*
   - Restart **SSH**, **firewalld**, and **fail2ban** services to put new changes in effect
+  
 - *[lvm_cache_trim-fb.sh](./lvm_cache_trim-fb.sh)*
   - Set up **LVM** **cache** for root directory on HDD and enable **TRIM** for SSD optimization
+  
 - *[rebuilt4next_reboot-fb.sh](./rebuilt4next_reboot-fb.sh)*
   - Rebuild the initial RAM disk to ensure system is bootable with TRIM and LVM cache enabled
+  
 - *[ssmtp-fb.sh](./ssmtp-fb.sh)*
   - Set up **SSMTP** mail transfer agent (**MTA**) to receive email notification of public IP address change
+  
 - *[check_ip.sh](./check_ip.sh)*
   - The above script depends on this script to check IP address change.
+  
 - *[http_ftp_install-tree-fb.sh](./http_ftp_install-tree-fb.sh)*
   - Set up **HTTP** and **FTP** install trees on the physical server for VMs
+  
 - *[add-hosts-fb.sh](./add-hosts-fb.sh)*
   - Resolve physical machine's and VMs' hostnames in `/etc/hosts`
+  
 - *[libvirt-prep-fb.sh](./libvirt-prep-fb.sh)*
   - Prepare networks and storage pools for VMs
+  
 - *[kscreator-fb.sh](./kscreator-fb.sh)*
   - Create kickstart file uniquely for each VM
+  
 - *[kstemplate-fb.cfg](./kstemplate-fb.cfg)*
   - Kickstart template files for above script
+  
 - *[build-vms-fb.sh](./build-vms-fb.sh)*
   - Set up VMs and install guest OSes
 
