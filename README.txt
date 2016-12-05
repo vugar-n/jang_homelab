@@ -3,9 +3,11 @@
 This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book.
 In this repository, all shell scripts are written in bash.
 
+
 **************************** WARNING! ****************************
 YOU MAY LOSE YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW
 **************************** WARNING! ****************************
+
 
 PREREQUISITIES:
 - CentOS 7.2 HTTP install tree (for physical machine) is located at the IP address: 172.16.1.250/24
