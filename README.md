@@ -32,15 +32,25 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 
 ####SYSTEM CONFIGURATION:
 **Operating system:** CentOS 7.2
+
 **Hostname:** hostname.domain.net
+
 **IP address:** 172.16.1.50/24 (static)
+
 **Gateway:** 172.16.1.1
+
 **Nameserver:** 172.16.1.1
+
 **Administrative user:** custom_user
+
 **/boot partition**: mount on `/dev/sda3` (size 768 MiB)
+
 **LVM use?:** Volume Group **mainVG** on `/dev/sda5` (use entire remaining disk space)
+
 **/home:** mount on `/dev/mainVG/home` (size 40 GiB)
+
 **/ (root):** mount on `/dev/mainVG/root` (all remaining space)
+
 **swap space:** mount on `/dev/mainVG/swap` (size 2 GiB)
 
 
