@@ -1,0 +1,2 @@
+# Add your public SSH key here
+# To connect to your server use the command: ssh -p 2222 custom_user@hostname.domain.net
