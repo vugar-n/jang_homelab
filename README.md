@@ -52,7 +52,7 @@ The security implication of this homelab configurator is by no means very secure
 To understand how this configurator comes together in pieces, inspect each files in the following order:
 
 - [*hostname-ks.cfg*](./hostname-ks.cfg)
-  - Kickstart file for physical machine to set up KVM hypervisor/libvirt to host VMs
+  > Kickstart file for physical machine to set up KVM hypervisor/libvirt to host VMs
   
 - *[main-script-fb.sh](./main-script-fb.sh)*
   - Main script executes each script below in sequential order
