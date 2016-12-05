@@ -13,11 +13,13 @@ PREREQUISITIES:
 - The CentOS 7.2 ISO image is also located on the same server at http://172.16.1.250/centos_image/CentOS-7-x86_64-DVD-1511.iso
 - All files in this repository are in a Bitbucket private repository
 - Your public SSH key is added to 'custom_user.authorized_keys' file
-- Primary hard drive is on __/dev/sda__ with two pre-existing Windows partitions on __/dev/sda1__ and __/dev/sda2__ with at least 120 GB of remaining free space
+- Primary hard drive is on /dev/sda with two pre-existing Windows partitions on /dev/sda1 and /dev/sda2 with at least 120 GB of remaining free space
 - /dev/sda uses MBR partition table
-- SSD is connected as third drive on __/dev/sdc__ with a capicity of at least 100 GB. 
+- SSD is connected as third drive on /dev/sdc with a capicity of at least 100 GB. 
 - /dev/sdc uses GUID partition table (GPT)
 - You would need to supply your own /etc/ssmtp/ssmtp.conf file. You can follow the Arch's wiki here for guidance: https://wiki.archlinux.org/index.php/SSMTP. You only need to supply the configuration file to receive IP address change notification to your email as 'ssmtp-fb.sh' and 'check_ip.sh' scripts have done most of the heavy lifting for you. This can be completed later after the entire lab configuration is complete. Also, you'd need to update the email in 'check_ip.sh' script.
+
+
 
 WHAT TO EXPECT:
 - This configurator will erase all of the partitions on /dev/sdc drive as well as all remaining partitions on /dev/sda that are not NTFS on either first or second primary partitions. /dev/sdc must use GPT and /dev/sda must use MBR for the erasure to be successful. If you have NTFS partition on /dev/sda3 and beyond, you can also expect to lose data on those partitions as you won't be prompted with a warning. Backing up your data is strongly recommended, and you may proceed at your own risk without doing so. 
@@ -25,6 +27,7 @@ WHAT TO EXPECT:
 - The virtual machines do not use RAW image storage backend typically located in /var/lib/libvirt/images directory. They use LVM storage pool instead for performance reason. Each logical volume would become hard disk drive for VM guests. It is ideal that you have good understanding of how LVM works.
 - The VMs are fresh install using only 'Server with GUI' package group. Nothing more or less. You can start lab exercises starting at Chapter 3 in Jang's book.
 - In my environment, this configurator takes about 2 hours to complete. Your mileage may vary.
+
 
 
 SYSTEM CONFIGURATION:
@@ -48,8 +51,9 @@ add_sshd-fb.txt
 fail2ban-fb.sh
 
 
+
 FILES OVERVIEW: 
-To understand how this configurators come together in pieces, inspect each files in order:
+To understand how this configurator comes together in pieces, inspect each files in the following order:
 hostname-ks.cfg             - Kickstart file for physical machine to set up KVM hypervisor/libvirt to host VMs
 main-script-fb.sh           - Main script executes each script below in sequential order
 sysctl-fb.sh                - Configure kernel runtime parameter
