@@ -1,4 +1,4 @@
-# RHCSA/RHCE Automated-Rebuild Homelab
+# RHCSA/RHCE Automated Homelab Configurator
 
 This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book.
 In this repository, all shell scripts are written in bash.
