@@ -33,6 +33,7 @@ WHAT TO EXPECT:
 
 
 SYSTEM CONFIGURATION:
+Operating System: CentOS 7.2
 Hostname: hostname.domain.net
 IP address: 172.16.1.50/24 (static)
 Gateway: 172.16.1.1
