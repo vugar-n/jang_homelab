@@ -1,7 +1,9 @@
 RHCSA/RHCE Automated Homelab Configurator
 =========================================
 
-This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash.
+This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash. 
+
+*Disclaimer: This homelab configurator and/or this repository is not affiliated, endorsed, or sponsored by Michael Jang, Alessandro Orsaria, or McGraw-Hill Global Education Holdings, LLC, McGraw-Hill School Education Holdings, LLC, or one of their affiliated companies ("MHE" or "us" or "we").*
 
 > ## **WARNING:** 
 > **YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
