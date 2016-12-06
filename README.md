@@ -1,12 +1,12 @@
 RHCSA/RHCE Automated Homelab Configurator
-------------------------------------------------------------------
+=========================================
 
 This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash.
 
 > ## **WARNING:** 
 > **YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
 
-####PREREQUISITIES:
+###PREREQUISITIES:
 - CentOS 7.2 HTTP install tree (for physical machine) is located at the IP address:  `172.16.1.250/24`
 - The private key (for private repository on Bitbucket.org) is located at `http://172.16.1.250/kickstart/hostname`
 - The CentOS 7.2 ISO image is also located on the same server at `http://172.16.1.250/centos_image/CentOS-7-x86_64-DVD-1511.iso`
@@ -20,14 +20,14 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 
 
 
-####WHAT TO EXPECT:
+###WHAT TO EXPECT:
 - This configurator will erase all of the partitions on `/dev/sdc` drive as well as all remaining partitions on `/dev/sda` that are not **NTFS** on either first or second primary partitions. `/dev/sdc` must use **GPT** and `/dev/sda` must use **MBR** for the erasure to be successful. If you have **NTFS** partition on `/dev/sda3` and beyond, you can also expect to lose data on those partitions as you won't be prompted with a warning. Backing up your data is strongly recommended, and you may proceed at your own risk without doing so. 
 - The erasure occurs during the **%pre** script phase in Anaconda when using the [*hostname-ks.cfg*](./hostname-ks.cfg) kickstart file. This means before you can even see the installer UI, your data is probably already gone.
 - The virtual machines do not use RAW image storage backend typically located in `/var/lib/libvirt/images` directory. They use **LVM** storage pool instead for performance reason. Each logical volume would be a hard disk drive inside the VM guests. It is ideal that you have good understanding of how **LVM** works.
 - The VMs are fresh install using only **Server with GUI** package group. Nothing more or less. You can start lab exercises starting at Chapter 3 in Jang's book.
 - In my environment, this configurator takes about 2 hours to complete. Your mileage may vary.
 
-####SYSTEM CONFIGURATION:
+###SYSTEM CONFIGURATION:
 **Operating system:** CentOS 7.2  
 **Hostname:** hostname.domain.net  
 **IP address:** 172.16.1.50/24 (static)  
@@ -40,11 +40,11 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 **/ (root):** mount on `/dev/mainVG/root` (all remaining space)  
 **swap space:** mount on `/dev/mainVG/swap` (size 2 GiB)
 
-####SECURITY CONCERN: 
+###SECURITY CONCERN: 
 The security implication of this homelab configurator is by no means very secured. If you are uncomfortable having your private key sitting on a local web server, then feel free make customization to the [*hostname-ks.cfg*](./hostname-ks.cfg) kickstart file in **%post** script section. Instead, you can actually have the entire install tree and private key on a USB. 
 
 
-####FILES OVERVIEW: 
+###FILES OVERVIEW: 
 To understand how this configurator comes together in pieces, inspect each files in the following order:
 
 - [*hostname-ks.cfg*](./hostname-ks.cfg)
@@ -106,7 +106,7 @@ To understand how this configurator comes together in pieces, inspect each files
   
 - *[build-vms-fb.sh](./build-vms-fb.sh)*
   > Set up VMs and install guest OSes
-
+  
 The security configurations in the following scripts and configuration files are by no means exhaustive and is not recommended for use outside of personal homelab:
 
 - *[sysctl-fb.sh](./sysctl-fb.sh)* 
