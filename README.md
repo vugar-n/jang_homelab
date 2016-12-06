@@ -14,6 +14,7 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 
 
 ###PREREQUISITIES:
+The configurator assumes the following configurations are true. Modification to the files may be needed to suit your environment.
 - CentOS 7.2 HTTP install tree (for physical machine) is located at the IP address:  `172.16.1.250/24`
 - The private key (for private repository on Bitbucket.org) is located at `http://172.16.1.250/kickstart/hostname`
 - The CentOS 7.2 ISO image is also located on the same server at `http://172.16.1.250/centos_image/CentOS-7-x86_64-DVD-1511.iso`
