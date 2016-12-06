@@ -24,7 +24,7 @@ The configurator assumes the following configurations are true. Modification to 
 - `/dev/sda` uses **MBR** partition table
 - SSD is connected as third drive on `/dev/sdc` with a capicity of at least 100 GB. 
 - `/dev/sdc` uses GUID partition table (**GPT**)
-- You would need to supply your own /etc/ssmtp/ssmtp.conf file. You can follow the [Arch's wiki here](https://wiki.archlinux.org/index.php/SSMTP) for guidance. You only need to supply the configuration file to receive IP address change notification to your email as [*ssmtp-fb.sh*](./ssmtp-fb.sh) and [*check_ip.sh*](./check_ip.sh) scripts have done most of the heavy lifting for you. This can be completed later after the entire lab configuration is complete. Also, you'd need to update the email in [*check_ip.sh*](./check_ip.sh) script.
+- You would need to supply your own `/etc/ssmtp/ssmtp.conf` file. You can follow the [Arch's wiki here](https://wiki.archlinux.org/index.php/SSMTP) for guidance. You only need to supply the configuration file to receive IP address change notification to your email as [*ssmtp-fb.sh*](./ssmtp-fb.sh) and [*check_ip.sh*](./check_ip.sh) scripts have done most of the heavy lifting for you. This can be completed later after the entire lab configuration is complete. Also, you'd need to update the email in [*check_ip.sh*](./check_ip.sh) script.
 
 
 ###WHAT TO EXPECT:
