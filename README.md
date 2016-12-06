@@ -2,12 +2,14 @@ RHCSA/RHCE Automated Homelab Configurator
 =========================================
 
 ###PURPOSE:
-This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash. With this configurator, you'd be able to build the entire lab from scratch directly on bare metal within a matter of two hours. While there are faster deployment solutions out there, this is intended to be used as a learning lab as one would be able to see how automation work in pieces using only bash and works with exercises in Jang's book for RHCSA/RHCE. No configuration management tool was used in this configurator.
+This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash. With this configurator, you'd be able to build the entire lab from scratch directly on bare metal within a matter of two hours. While there are faster deployment solutions out there, this is intended to be used as a learning lab as one would be able to see how automation work in pieces using only bash and works with exercises in Jang's book for RHCSA/RHCE. No configuration management tool is used in this configurator.
+
 
 ###DISCLAIMER:
 *This homelab configurator and/or this repository is not affiliated, endorsed, or sponsored by Michael Jang, Alessandro Orsaria, and McGraw-Hill Global Education Holdings, LLC, McGraw-Hill School Education Holdings, LLC, or one of their affiliated companies ("MHE" or "us" or "we").*
 
-### **WARNING:** PLEASE READ BEFORE CONTINUING
+
+### WARNING: PLEASE READ BEFORE CONTINUING
 **YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
 
 
@@ -24,13 +26,13 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 - You would need to supply your own /etc/ssmtp/ssmtp.conf file. You can follow the [Arch's wiki here](https://wiki.archlinux.org/index.php/SSMTP) for guidance. You only need to supply the configuration file to receive IP address change notification to your email as [*ssmtp-fb.sh*](./ssmtp-fb.sh) and [*check_ip.sh*](./check_ip.sh) scripts have done most of the heavy lifting for you. This can be completed later after the entire lab configuration is complete. Also, you'd need to update the email in [*check_ip.sh*](./check_ip.sh) script.
 
 
-
 ###WHAT TO EXPECT:
 - This configurator will erase all of the partitions on `/dev/sdc` drive as well as all remaining partitions on `/dev/sda` that are not **NTFS** on either first or second primary partitions. `/dev/sdc` must use **GPT** and `/dev/sda` must use **MBR** for the erasure to be successful. If you have **NTFS** partition on `/dev/sda3` and beyond, you can also expect to lose data on those partitions as you won't be prompted with a warning. Backing up your data is strongly recommended, and you may proceed at your own risk without doing so. 
 - The erasure occurs during the **%pre** script phase in Anaconda when using the [*hostname-ks.cfg*](./hostname-ks.cfg) kickstart file. This means before you can even see the installer UI, your data is probably already gone.
 - The virtual machines do not use RAW image storage backend typically located in `/var/lib/libvirt/images` directory. They use **LVM** storage pool instead for performance reason. Each logical volume would be a hard disk drive inside the VM guests. It is ideal that you have good understanding of how **LVM** works.
 - The VMs are fresh install using only **Server with GUI** package group. Nothing more or less. You can start lab exercises starting at Chapter 3 in Jang's book.
 - In my environment, this configurator takes about 2 hours to complete. Your mileage may vary.
+
 
 ###SYSTEM CONFIGURATION:
 **Operating system:** CentOS 7.2  
@@ -44,6 +46,7 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 **/home:** mount on `/dev/mainVG/home` (size 40 GiB)  
 **/ (root):** mount on `/dev/mainVG/root` (all remaining space)  
 **swap space:** mount on `/dev/mainVG/swap` (size 2 GiB)
+
 
 ###SECURITY CONCERN: 
 The security implication of this homelab configurator is by no means very secured. If you are uncomfortable having your private key sitting on a local web server, then feel free make customization to the [*hostname-ks.cfg*](./hostname-ks.cfg) kickstart file in **%post** script section. Instead, you can actually have the entire install tree and private key on a USB. 
