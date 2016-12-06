@@ -4,8 +4,8 @@ RHCSA/RHCE Automated Homelab Configurator
 This is a linux homelab configurator based on lab scenarios in seventh edition of Michael Jang's RHCSA/RHCE book. In this repository, all shell scripts are written in bash.
 
 
->**WARNING:** 
-**YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
+> ## **WARNING:** 
+> **YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
 
 ####PREREQUISITIES:
 - CentOS 7.2 HTTP install tree (for physical machine) is located at the IP address:  `172.16.1.250/24`
@@ -28,31 +28,18 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 - The VMs are fresh install using only **Server with GUI** package group. Nothing more or less. You can start lab exercises starting at Chapter 3 in Jang's book.
 - In my environment, this configurator takes about 2 hours to complete. Your mileage may vary.
 
-
-
 ####SYSTEM CONFIGURATION:
-**Operating system:** CentOS 7.2
-
-**Hostname:** hostname.domain.net
-
-**IP address:** 172.16.1.50/24 (static)
-
-**Gateway:** 172.16.1.1
-
-**Nameserver:** 172.16.1.1
-
-**Administrative user:** custom_user
-
-**/boot partition**: mount on `/dev/sda3` (size 768 MiB)
-
-**LVM use?:** Volume Group **mainVG** on `/dev/sda5` (use entire remaining disk space)
-
-**/home:** mount on `/dev/mainVG/home` (size 40 GiB)
-
-**/ (root):** mount on `/dev/mainVG/root` (all remaining space)
-
-**swap space:** mount on `/dev/mainVG/swap` (size 2 GiB)
-
+ **Operating system:** CentOS 7.2
+ **Hostname:** hostname.domain.net
+ **IP address:** 172.16.1.50/24 (static)
+ **Gateway:** 172.16.1.1
+ **Nameserver:** 172.16.1.1
+ **Administrative user:** custom_user
+ **/boot partition**: mount on `/dev/sda3` (size 768 MiB)
+ **LVM use?:** Volume Group **mainVG** on `/dev/sda5` (use entire remaining disk space)
+ **/home:** mount on `/dev/mainVG/home` (size 40 GiB)
+ **/ (root):** mount on `/dev/mainVG/root` (all remaining space)
+ **swap space:** mount on `/dev/mainVG/swap` (size 2 GiB)
 
 ####SECURITY CONCERN: 
 The security implication of this homelab configurator is by no means very secured. If you are uncomfortable having your private key sitting on a local web server, then feel free make customization to the [*hostname-ks.cfg*](./hostname-ks.cfg) kickstart file in **%post** script section. Instead, you can actually have the entire install tree and private key on a USB. 
