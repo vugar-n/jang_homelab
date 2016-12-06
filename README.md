@@ -6,7 +6,7 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 
 
 ###DISCLAIMER:
-*This homelab configurator and/or this repository is not affiliated, endorsed, or sponsored by Michael Jang, Alessandro Orsaria, and McGraw-Hill Global Education Holdings, LLC, McGraw-Hill School Education Holdings, LLC, or one of their affiliated companies ("MHE" or "us" or "we").*
+*This homelab configurator and/or this repository is not affiliated, endorsed, or sponsored by Michael Jang, Alessandro Orsaria, or McGraw-Hill Global Education Holdings, LLC, McGraw-Hill School Education Holdings, LLC, or one of their affiliated companies ("MHE" or "us" or "we").*
 
 
 ### WARNING: PLEASE READ BEFORE CONTINUING
