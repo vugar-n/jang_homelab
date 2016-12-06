@@ -5,8 +5,9 @@ This is a linux homelab configurator based on lab scenarios in seventh edition o
 
 *Disclaimer: This homelab configurator and/or this repository is not affiliated, endorsed, or sponsored by Michael Jang, Alessandro Orsaria, or McGraw-Hill Global Education Holdings, LLC, McGraw-Hill School Education Holdings, LLC, or one of their affiliated companies ("MHE" or "us" or "we").*
 
-## **WARNING:** PLEASE READ BEFORE CONTINUING
-**YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
+> ## **WARNING:** PLEASE READ BEFORE CONTINUING.  
+> **YOU MAY LOSE ALL YOUR DATA IF YOU ATTEMPT TO USE THIS CONFIGURATOR WITHOUT READING THE PREREQUISITES AND EXPECTATIONS BELOW.**
+
 
 ###PREREQUISITIES:
 - CentOS 7.2 HTTP install tree (for physical machine) is located at the IP address:  `172.16.1.250/24`
